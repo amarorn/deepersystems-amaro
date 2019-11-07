@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+     <div class="row">
+         {% for v in video %}
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <embed class="card-img-top" src={{ v.video.url }} alt="Card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ v.name }}</h5>
+                  <p class="card-text">{{ v.theme }}</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a id="thumbs_up" ype="button" href="/like/0/{{v.id}}/" name="thumbs_up" class="fa fa-thumbs-up"></a>
+                    </div>
+                      <div class="btn-group">
+                        <a id="thumbs_down" type="button" href="/like/1/{{v.id}}/" name="thumbs_down" class="fa fa-thumbs-down"></a>
+                      </div>
+                    <small class="text-muted">Like: {{ v.thumbs_up }}</small>
+                      <small class="text-muted">Like: {{ v.thumbs_down }}</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+     {% endfor %}
+          </div>
+
+
+{% endblock %}

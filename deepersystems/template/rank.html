@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Theme</th>
+      <th scope="col">Likes</th>
+    </tr>
+  </thead>
+  <tbody>
+   {%  for r in rank  %}
+    <tr>
+      <th scope="row">{{ r.id.count }}</th>
+      <td>{{ r.name }}</td>
+      <td>{{ r.theme }}</td>
+      <td>{{ r.qtd }}</td>
+    </tr>
+   {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
